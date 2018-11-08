@@ -102,6 +102,7 @@ var exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sketch */ "sketch");
 /* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch__WEBPACK_IMPORTED_MODULE_0__);
+ // Select only short sentences
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   sketch__WEBPACK_IMPORTED_MODULE_0___default.a.UI.message("100 Shapesum Title");

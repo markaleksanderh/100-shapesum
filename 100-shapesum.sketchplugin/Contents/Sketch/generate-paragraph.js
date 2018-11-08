@@ -105,8 +105,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./text */ "./src/text.js");
 
 
+var arr = _text__WEBPACK_IMPORTED_MODULE_1__["text"];
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  sketch__WEBPACK_IMPORTED_MODULE_0___default.a.UI.message(_text__WEBPACK_IMPORTED_MODULE_1__["text"][0]);
+  var str = "";
+
+  for (var i = 0; i < 4; i++) {
+    var position = Math.floor(Math.random() * arr.length);
+    var phrase = arr[position];
+    str += " " + phrase;
+    arr.splice(position, 1);
+  }
+
+  sketch__WEBPACK_IMPORTED_MODULE_0___default.a.UI.message(str);
 });
 
 /***/ }),
