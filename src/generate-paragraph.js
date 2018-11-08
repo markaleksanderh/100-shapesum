@@ -8,7 +8,7 @@ export default function() {
   for (var i = 0; i < 4; i++) {
     var position = Math.floor(Math.random()*arr.length)
     var phrase = arr[position]
-    str += " " + phrase
+    str += ". " + phrase
     arr.splice(position, 1)
   }
   sketch.UI.message(str)
