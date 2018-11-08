@@ -102,11 +102,31 @@ var exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sketch */ "sketch");
 /* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch__WEBPACK_IMPORTED_MODULE_0__);
- // Select only short sentences
+/* harmony import */ var _text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./text */ "./src/text.js");
 
-/* harmony default export */ __webpack_exports__["default"] = (function () {
-  sketch__WEBPACK_IMPORTED_MODULE_0___default.a.UI.message("100 Shapesum Title");
+
+var arr = _text__WEBPACK_IMPORTED_MODULE_1__["text"];
+var phrases = _text__WEBPACK_IMPORTED_MODULE_1__["text"].filter(function (phrase) {
+  return phrase.length < 30;
 });
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var phrase = phrases[Math.floor(Math.random() * phrases.length)];
+  sketch__WEBPACK_IMPORTED_MODULE_0___default.a.UI.message(phrase);
+});
+
+/***/ }),
+
+/***/ "./src/text.js":
+/*!*********************!*\
+  !*** ./src/text.js ***!
+  \*********************/
+/*! exports provided: text */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "text", function() { return text; });
+var text = ["Leave a meaningful mark", "We bring the expertise to prepare for the future.", "Often, growth is fast, and we need to make changes, faster.", "We’re always thinking ahead, figuring out how to make the most purposeful impact.", "We take a step back before starting a project, taking time to figure out the smart approach, not the easy one.", "We take pride in making an impact, with long-lasting benefits.", "Our readiness for the future means we are confident in our ability to make change.", "We are at the heart of shaping the future of design, raising a new bar for our clients, our peers and our industry.", "Have fun, together.", "Creativity is purposeful play.", "So whether through project discovery, user workshops, or our daily team lunch, we make time to connect and create.", "Good design is about understanding people.", "We know we do our best work when we can be ourselves, so we’re always empathetic and respectful of opinions that are different to our own.", "Fantastic teams are made up of empowered individuals.", "We have the freedom to develop in a direction that is true to us, but also be there for others when they need us; sharing our skills, lending a hand, or reflecting over pizza.", "Be passionately curious.", "We never stop learning.", "Being curious about design empowers us to solve problems with fresh thinking.", "Each project is a chance to crack a new code.", "We yearn for that moment of uncovering the final puzzle piece, that sweet bit of insight that will help us create something better, smarter.", "We aren’t only curious about design, but about our users, our peers, and our clients.", "We ask meaningful questions, we think, we ponder, and we act.", "Always with a clear vision and a desire to make a difference."];
 
 /***/ }),
 

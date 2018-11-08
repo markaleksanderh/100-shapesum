@@ -12,11 +12,6 @@
       "name": "Generate Paragraph",
       "identifier": "paragraph",
       "script": "generate-paragraph.js"
-    },
-    {
-      "name": "Generate Quote",
-      "identifier": "quote",
-      "script": "generate-quote.js"
     }
   ],
   "menu": {

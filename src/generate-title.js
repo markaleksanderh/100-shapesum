@@ -1,7 +1,10 @@
 import sketch from 'sketch'
+import {text} from './text'
 
-// Select only short sentences
+var arr = text
+var phrases = text.filter(phrase => phrase.length < 30)
 
 export default function() {
-  sketch.UI.message("100 Shapesum Title")
+  var phrase = phrases[Math.floor(Math.random()*phrases.length)]
+  sketch.UI.message(phrase)
 }
