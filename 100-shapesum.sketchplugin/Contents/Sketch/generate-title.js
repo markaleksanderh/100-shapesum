@@ -118,9 +118,11 @@ __webpack_require__.r(__webpack_exports__);
   console.log(selectedCount);
 
   if (selectedCount === 0) {
-    sketch__WEBPACK_IMPORTED_MODULE_0___default.a.UI.message("No selected layers.");
+    sketch__WEBPACK_IMPORTED_MODULE_0___default.a.UI.message("Select a text layer.");
   } else {
-    sketch__WEBPACK_IMPORTED_MODULE_0___default.a.UI.message(phrase);
+    selectedLayers.forEach(function (layer, i) {
+      layer.text = phrase;
+    });
   }
 });
 

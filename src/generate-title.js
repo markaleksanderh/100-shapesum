@@ -1,7 +1,6 @@
 import sketch from 'sketch'
 import {text} from './text'
 
-
 export default function() {
   var arr = text
   var phrases = text.filter(phrase => phrase.length < 20)
@@ -12,8 +11,10 @@ export default function() {
   var selectedCount = selectedLayers.length
   console.log(selectedCount)
   if (selectedCount === 0) {
-    sketch.UI.message("No selected layers.")
+    sketch.UI.message("Select a text layer.")
   } else {
-    sketch.UI.message(phrase)
+    selectedLayers.forEach(function(layer, i) {
+      layer.text = phrase
+    })
   }
 }
