@@ -105,13 +105,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./text */ "./src/text.js");
 
 
-var arr = _text__WEBPACK_IMPORTED_MODULE_1__["text"];
-var phrases = _text__WEBPACK_IMPORTED_MODULE_1__["text"].filter(function (phrase) {
-  return phrase.length < 20;
-});
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  var phrase = phrases[Math.floor(Math.random() * phrases.length)];
-  sketch__WEBPACK_IMPORTED_MODULE_0___default.a.UI.message(phrase);
+  var arr = _text__WEBPACK_IMPORTED_MODULE_1__["text"];
+  var phrases = _text__WEBPACK_IMPORTED_MODULE_1__["text"].filter(function (phrase) {
+    return phrase.length < 20;
+  });
+  var phrase = phrases[Math.floor(Math.random() * phrases.length)]; // sketch.UI.message(phrase)
+
+  var document = sketch__WEBPACK_IMPORTED_MODULE_0___default.a.getSelectedDocument();
+  var selectedLayers = document.selectedLayers;
+  var selectedCount = selectedLayers.length;
+  console.log(selectedCount);
+
+  if (selectedCount === 0) {
+    sketch__WEBPACK_IMPORTED_MODULE_0___default.a.UI.message("No selected layers.");
+  } else {
+    sketch__WEBPACK_IMPORTED_MODULE_0___default.a.UI.message(phrase);
+  }
 });
 
 /***/ }),
