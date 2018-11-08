@@ -4,15 +4,27 @@
   "icon": "icon.png",
   "commands": [
     {
-      "name": "my-command",
-      "identifier": "my-command-identifier",
-      "script": "my-command.js"
+      "name": "Generate Title",
+      "identifier": "title",
+      "script": "generate-title.js"
+    },
+    {
+      "name": "Generate Paragraph",
+      "identifier": "paragraph",
+      "script": "generate-paragraph.js"
+    },
+    {
+      "name": "Generate Quote",
+      "identifier": "quote",
+      "script": "generate-quote.js"
     }
   ],
   "menu": {
-    "title": "100-shapesum",
+    "title": "100-Shapesum",
     "items": [
-      "my-command-identifier"
+      "title",
+      "paragraph",
+      "quote"
     ]
   },
   "version": "0.1.0",
