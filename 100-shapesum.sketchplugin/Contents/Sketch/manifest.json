@@ -12,6 +12,11 @@
       "name": "Generate Paragraph",
       "identifier": "paragraph",
       "script": "generate-paragraph.js"
+    },
+    {
+      "name": "Generate Multiple",
+      "identifier": "multiple",
+      "script": "generate-multiple.js"
     }
   ],
   "menu": {
@@ -19,7 +24,7 @@
     "items": [
       "title",
       "paragraph",
-      "quote"
+      "multiple"
     ]
   },
   "version": "0.1.0",
