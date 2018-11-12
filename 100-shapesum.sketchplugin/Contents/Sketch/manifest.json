@@ -31,5 +31,5 @@
   "name": "100-shapesum",
   "identifier": "100-shapesum",
   "disableCocoaScriptPreprocessor": true,
-  "appcast": "https://raw.githubusercontent.com//master/.appcast.xml"
+  "appcast": "https://raw.githubusercontent.com/markaleksanderh/100-shapesum/master/.appcast.xml"
 }

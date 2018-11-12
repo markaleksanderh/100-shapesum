@@ -1,13 +1,14 @@
 {
   "name": "100-shapesum",
   "version": "0.1.0",
+  "description": "Lorem Ipsum Sketch plugin based on 100 Shapes tone of voice.",
   "engines": {
     "sketch": ">=3.0"
   },
   "repository": {
-  "type" : "git",
-  "url" : "https://github.com/markaleksanderh/100-shapesum.git"
-},
+    "type": "git",
+    "url": "https://github.com/markaleksanderh/100-shapesum.git"
+  },
   "skpm": {
     "name": "100-shapesum",
     "manifest": "src/manifest.json",
