@@ -4,6 +4,10 @@
   "engines": {
     "sketch": ">=3.0"
   },
+  "repository": {
+  "type" : "git",
+  "url" : "https://github.com/markaleksanderh/100-shapesum.git"
+},
   "skpm": {
     "name": "100-shapesum",
     "manifest": "src/manifest.json",
