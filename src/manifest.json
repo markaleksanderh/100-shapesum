@@ -9,12 +9,12 @@
       "script": "./generate-title.js"
     },
     {
-      "name": "Generate Paragraph",
+      "name": "Generate Single Paragraph",
       "identifier": "paragraph",
       "script": "./generate-paragraph.js"
     },
     {
-      "name": "Generate Multiple",
+      "name": "Generate Multiple Paragraphs",
       "identifier": "multiple",
       "script": "./generate-multiple.js"
     }
