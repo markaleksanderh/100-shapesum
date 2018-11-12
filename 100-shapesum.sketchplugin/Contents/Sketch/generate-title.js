@@ -102,20 +102,20 @@ var exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sketch */ "sketch");
 /* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./text */ "./src/text.js");
+/* harmony import */ var _utils_text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/text */ "./src/utils/text.js");
+/* harmony import */ var _utils_get_layers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/get-layers */ "./src/utils/get-layers.js");
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  var arr = _text__WEBPACK_IMPORTED_MODULE_1__["text"];
-  var phrases = _text__WEBPACK_IMPORTED_MODULE_1__["text"].filter(function (phrase) {
+  var arr = _utils_text__WEBPACK_IMPORTED_MODULE_1__["text"];
+  var phrases = _utils_text__WEBPACK_IMPORTED_MODULE_1__["text"].filter(function (phrase) {
     return phrase.length < 20;
   });
   var phrase = phrases[Math.floor(Math.random() * phrases.length)];
-  var document = sketch__WEBPACK_IMPORTED_MODULE_0___default.a.getSelectedDocument();
-  var selectedLayers = document.selectedLayers;
-  var selectedCount = selectedLayers.length;
+  var selectedLayers = Object(_utils_get_layers__WEBPACK_IMPORTED_MODULE_2__["default"])();
 
-  if (selectedCount === 0) {
+  if (selectedLayers.length === 0) {
     sketch__WEBPACK_IMPORTED_MODULE_0___default.a.UI.message("Select a text layer.");
   } else {
     selectedLayers.forEach(function (layer, i) {
@@ -126,10 +126,31 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/text.js":
-/*!*********************!*\
-  !*** ./src/text.js ***!
-  \*********************/
+/***/ "./src/utils/get-layers.js":
+/*!*********************************!*\
+  !*** ./src/utils/get-layers.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return getLayers; });
+/* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sketch */ "sketch");
+/* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch__WEBPACK_IMPORTED_MODULE_0__);
+
+function getLayers() {
+  var document = sketch__WEBPACK_IMPORTED_MODULE_0___default.a.getSelectedDocument();
+  var selectedLayers = document.selectedLayers;
+  return selectedLayers;
+}
+
+/***/ }),
+
+/***/ "./src/utils/text.js":
+/*!***************************!*\
+  !*** ./src/utils/text.js ***!
+  \***************************/
 /*! exports provided: text */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 

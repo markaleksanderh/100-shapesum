@@ -1,14 +1,10 @@
 import sketch from 'sketch'
-import {text} from './text'
-import createParagraph from './create-paragraph'
+import createParagraph from './utils/create-paragraph'
+import getLayers from './utils/get-layers'
 
 export default function() {
-  // Select layers
-  var document = sketch.getSelectedDocument()
-  var selectedLayers = document.selectedLayers
-  var selectedCount = selectedLayers.length
-
-  if (selectedCount === 0) {
+  const selectedLayers = getLayers()
+  if (selectedLayers.length === 0) {
     sketch.UI.message("Select a text layer.")
   } else {
     selectedLayers.forEach(function(layer, i) {

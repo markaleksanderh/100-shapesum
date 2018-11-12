@@ -91,10 +91,40 @@ var exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/create-paragraph.js":
-/*!*********************************!*\
-  !*** ./src/create-paragraph.js ***!
-  \*********************************/
+/***/ "./src/generate-multiple.js":
+/*!**********************************!*\
+  !*** ./src/generate-multiple.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sketch */ "sketch");
+/* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_create_paragraph__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/create-paragraph */ "./src/utils/create-paragraph.js");
+/* harmony import */ var _utils_get_layers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/get-layers */ "./src/utils/get-layers.js");
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var selectedLayers = Object(_utils_get_layers__WEBPACK_IMPORTED_MODULE_2__["default"])();
+
+  if (selectedLayers.length === 0) {
+    sketch__WEBPACK_IMPORTED_MODULE_0___default.a.UI.message("Select a text layer.");
+  } else {
+    selectedLayers.forEach(function (layer, i) {
+      layer.text = Object(_utils_create_paragraph__WEBPACK_IMPORTED_MODULE_1__["default"])();
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./src/utils/create-paragraph.js":
+/*!***************************************!*\
+  !*** ./src/utils/create-paragraph.js ***!
+  \***************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -103,7 +133,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return createParagraph; });
 /* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sketch */ "sketch");
 /* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./text */ "./src/text.js");
+/* harmony import */ var _text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./text */ "./src/utils/text.js");
 
 
 function createParagraph() {
@@ -123,43 +153,31 @@ function createParagraph() {
 
 /***/ }),
 
-/***/ "./src/generate-multiple.js":
-/*!**********************************!*\
-  !*** ./src/generate-multiple.js ***!
-  \**********************************/
+/***/ "./src/utils/get-layers.js":
+/*!*********************************!*\
+  !*** ./src/utils/get-layers.js ***!
+  \*********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return getLayers; });
 /* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sketch */ "sketch");
 /* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./text */ "./src/text.js");
-/* harmony import */ var _create_paragraph__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./create-paragraph */ "./src/create-paragraph.js");
 
-
-
-/* harmony default export */ __webpack_exports__["default"] = (function () {
-  // Select layers
+function getLayers() {
   var document = sketch__WEBPACK_IMPORTED_MODULE_0___default.a.getSelectedDocument();
   var selectedLayers = document.selectedLayers;
-  var selectedCount = selectedLayers.length;
-
-  if (selectedCount === 0) {
-    sketch__WEBPACK_IMPORTED_MODULE_0___default.a.UI.message("Select a text layer.");
-  } else {
-    selectedLayers.forEach(function (layer, i) {
-      layer.text = Object(_create_paragraph__WEBPACK_IMPORTED_MODULE_2__["default"])();
-    });
-  }
-});
+  return selectedLayers;
+}
 
 /***/ }),
 
-/***/ "./src/text.js":
-/*!*********************!*\
-  !*** ./src/text.js ***!
-  \*********************/
+/***/ "./src/utils/text.js":
+/*!***************************!*\
+  !*** ./src/utils/text.js ***!
+  \***************************/
 /*! exports provided: text */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
