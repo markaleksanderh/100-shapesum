@@ -20,8 +20,5 @@
   },
   "devDependencies": {
     "@skpm/builder": "^0.5.2"
-  },
-  "dependencies": {
-    "morgan": "^1.9.1"
   }
 }
