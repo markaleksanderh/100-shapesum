@@ -113,8 +113,15 @@ __webpack_require__.r(__webpack_exports__);
   if (selectedLayers.length === 0) {
     sketch__WEBPACK_IMPORTED_MODULE_0___default.a.UI.message("Select a text layer.");
   } else {
+    var paragraphNumbers = parseInt(sketch__WEBPACK_IMPORTED_MODULE_0___default.a.UI.getStringFromUser("How many paragraphs do you want to generate?", "1"));
     selectedLayers.forEach(function (layer, i) {
-      layer.text = Object(_utils_create_paragraph__WEBPACK_IMPORTED_MODULE_1__["default"])();
+      var paragraphs = [];
+
+      for (var i = 0; i < paragraphNumbers; i++) {
+        paragraphs.push(Object(_utils_create_paragraph__WEBPACK_IMPORTED_MODULE_1__["default"])());
+      }
+
+      layer.text = paragraphs.join("\n\n");
     });
   }
 });

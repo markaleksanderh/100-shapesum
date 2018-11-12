@@ -104,25 +104,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _utils_text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/text */ "./src/utils/text.js");
 /* harmony import */ var _utils_get_layers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/get-layers */ "./src/utils/get-layers.js");
+/* harmony import */ var _utils_create_sentence__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/create-sentence */ "./src/utils/create-sentence.js");
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  var arr = _utils_text__WEBPACK_IMPORTED_MODULE_1__["text"];
-  var phrases = _utils_text__WEBPACK_IMPORTED_MODULE_1__["text"].filter(function (phrase) {
-    return phrase.length < 20;
-  });
-  var phrase = phrases[Math.floor(Math.random() * phrases.length)];
   var selectedLayers = Object(_utils_get_layers__WEBPACK_IMPORTED_MODULE_2__["default"])();
 
   if (selectedLayers.length === 0) {
     sketch__WEBPACK_IMPORTED_MODULE_0___default.a.UI.message("Select a text layer.");
   } else {
     selectedLayers.forEach(function (layer, i) {
-      layer.text = phrase;
+      layer.text = Object(_utils_create_sentence__WEBPACK_IMPORTED_MODULE_3__["default"])();
     });
   }
 });
+
+/***/ }),
+
+/***/ "./src/utils/create-sentence.js":
+/*!**************************************!*\
+  !*** ./src/utils/create-sentence.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return createSentence; });
+/* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sketch */ "sketch");
+/* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./text */ "./src/utils/text.js");
+
+
+function createSentence() {
+  var arr = _text__WEBPACK_IMPORTED_MODULE_1__["text"];
+  var phrases = _text__WEBPACK_IMPORTED_MODULE_1__["text"].filter(function (phrase) {
+    return phrase.length < 20;
+  });
+  var phrase = phrases[Math.floor(Math.random() * phrases.length)];
+  return phrase;
+}
 
 /***/ }),
 
